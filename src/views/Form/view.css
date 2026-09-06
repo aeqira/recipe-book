@@ -1,0 +1,67 @@
+/** @format */
+
+.recipe-form {
+	max-width: 760px;
+	padding: 28px;
+	border: 1px solid #dcd8cc;
+	border-radius: 18px;
+	background: #fff;
+	box-shadow: 0 12px 35px rgba(45, 76, 62, 0.08);
+}
+
+.form-grid {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 20px;
+}
+
+.form-grid label {
+	display: grid;
+	gap: 7px;
+	font-weight: 650;
+}
+
+.form-grid .wide { grid-column: 1 / -1; }
+
+.form-grid input,
+.form-grid select,
+.form-grid textarea {
+	width: 100%;
+	padding: 11px 12px;
+	box-sizing: border-box;
+	border: 1px solid #b9b5aa;
+	border-radius: 8px;
+	background: #fff;
+	color: var(--text-color);
+	font: inherit;
+}
+
+.form-grid textarea { resize: vertical; }
+
+.form-grid input:focus,
+.form-grid select:focus,
+.form-grid textarea:focus {
+	outline: 3px solid rgba(123, 158, 137, 0.3);
+	border-color: var(--brand-accent);
+}
+
+.primary-button {
+	margin-top: 22px;
+	padding: 12px 20px;
+	border: 0;
+	border-radius: 999px;
+	background: var(--brand-accent);
+	color: white;
+	font: inherit;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.primary-button:disabled { opacity: 0.65; cursor: wait; }
+.form-error { color: #a52d22; font-weight: 600; }
+
+@media (max-width: 600px) {
+	.recipe-form { padding: 20px; }
+	.form-grid { grid-template-columns: 1fr; }
+	.form-grid .wide { grid-column: auto; }
+}

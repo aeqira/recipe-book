@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "recipe-book",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-08-15",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "aq_recipes",
+      "database_id": "0f04c443-1d62-4de6-a325-5b8ec0c9f226",
+      "migrations_dir": "src/migrations"
+    }
+  ]
+}

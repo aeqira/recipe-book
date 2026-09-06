@@ -1,0 +1,69 @@
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    "target": "es2023",
+    "lib": [
+      "ES2023",
+      "DOM"
+    ],
+    "module": "esnext",
+    "types": [
+      "vite/client"
+    ],
+    "allowArbitraryExtensions": true,
+    "skipLibCheck": true,
+    "paths": {
+      "@Components": [
+        "./src/components/index.ts"
+      ],
+      "@Components/*": [
+        "./src/components/*"
+      ],
+      "@Constants": [
+        "./src/constants/index.ts"
+      ],
+      "@Constants/*": [
+        "./src/constants/*"
+      ],
+      "@Contexts": [
+        "./src/contexts/index.ts"
+      ],
+      "@Contexts/*": [
+        "./src/contexts/*"
+      ],
+      "@Layouts": [
+        "./src/layouts/index.ts"
+      ],
+      "@Layouts/*": [
+        "./src/layouts/*"
+      ],
+      "@Types": [
+        "./src/types/index.ts"
+      ],
+      "@Types/*": [
+        "./src/types/*"
+      ],
+      "@Views": [
+        "./src/views/index.ts"
+      ],
+      "@Views/*": [
+        "./src/views/*"
+      ]
+    },
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    /* Linting */
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    "src"
+  ]
+}

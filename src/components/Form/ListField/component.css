@@ -1,0 +1,71 @@
+/** @format */
+
+.list-field {
+	min-width: 0;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+.list-field legend {
+	margin-bottom: 7px;
+	font-weight: 650;
+}
+
+.list-field-entry {
+	display: flex;
+	gap: 9px;
+}
+
+.list-field-entry input { flex: 1; }
+
+.add-list-item {
+	flex: 0 0 44px;
+	border: 0;
+	border-radius: 9px;
+	background: var(--brand-color);
+	color: #fff;
+	font-size: 1.65rem;
+	font-weight: 500;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.add-list-item:hover { background: var(--brand-accent); }
+
+.add-list-item:focus-visible,
+.remove-list-item:focus-visible {
+	outline: 3px solid rgba(123, 158, 137, 0.4);
+	outline-offset: 2px;
+}
+
+.list-field ul,
+.list-field ol {
+	display: grid;
+	gap: 7px;
+	margin: 12px 0 0;
+	padding-left: 28px;
+}
+
+.list-field li { padding-left: 3px; }
+
+.list-field li span { vertical-align: middle; }
+
+.remove-list-item {
+	margin-left: 8px;
+	padding: 1px 7px;
+	border: 0;
+	border-radius: 999px;
+	background: #f3e7e2;
+	color: #8a321f;
+	font-size: 1.1rem;
+	line-height: 1.25;
+	cursor: pointer;
+}
+
+.list-field-hint {
+	margin: 7px 0 0;
+	color: #77736a;
+	font-size: 0.85rem;
+	font-weight: 400;
+}

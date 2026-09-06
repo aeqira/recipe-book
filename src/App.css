@@ -1,0 +1,44 @@
+/** @format */
+
+:root {
+	--brand-color: #7b9e89;
+	--brand-accent: #2d4c3e;
+
+	--accent-color: #e28b62;
+	--bg-color: #f9f7f2;
+	--text-color: #333333;
+
+	--font-main: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+main {
+	width: min(1120px, 100%);
+	margin: 0 auto;
+}
+
+.page-heading {
+	max-width: 760px;
+	margin-bottom: 36px;
+}
+
+.page-heading h1 {
+	margin: 4px 0 12px;
+	font-size: clamp(2rem, 6vw, 3.7rem);
+	line-height: 1.05;
+	color: var(--brand-accent);
+}
+
+.page-heading > p:not(.eyebrow) {
+	color: #69675f;
+	font-size: 1.15rem;
+	line-height: 1.6;
+}
+
+.eyebrow {
+	margin: 0;
+	color: #9a4f2d;
+	font-size: 0.8rem;
+	font-weight: 800;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
