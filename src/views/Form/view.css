@@ -36,6 +36,11 @@
 	font: inherit;
 }
 
+.form-grid input,
+.form-grid select {
+	height: 44px;
+}
+
 .form-grid textarea { resize: vertical; }
 
 .form-grid input:focus,

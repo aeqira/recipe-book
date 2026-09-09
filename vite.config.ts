@@ -15,6 +15,7 @@ export default defineConfig({
 	plugins: [react(), cloudflare()],
 	resolve: {
 		alias: {
+			'@Api': ResolvedPath('api'),
 			'@Components': ResolvedPath('components'),
 			'@Constants': ResolvedPath('constants'),
 			'@Contexts': ResolvedPath('contexts'),

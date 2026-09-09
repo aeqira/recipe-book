@@ -13,6 +13,12 @@
     "allowArbitraryExtensions": true,
     "skipLibCheck": true,
     "paths": {
+      "@Api": [
+        "./src/api/index.ts"
+      ],
+      "@Api/*": [
+        "./src/api/*"
+      ],
       "@Components": [
         "./src/components/index.ts"
       ],
@@ -64,6 +70,7 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": [
-    "src"
+    "src",
+    "src/api/api.ts"
   ]
 }

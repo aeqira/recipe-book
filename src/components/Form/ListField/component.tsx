@@ -36,11 +36,19 @@ export const ListField = ({ label, name, placeholder, ordered = false }: ListFie
 				type='button'
 				className='remove-list-item'
 				aria-label={`Remove ${item}`}
-				onClick={() => setItems((currentItems) => currentItems.filter((_, itemIndex) => itemIndex !== index))}
+				onClick={() =>
+					setItems((currentItems) =>
+						currentItems.filter((_, itemIndex) => itemIndex !== index)
+					)
+				}
 			>
 				×
 			</button>
-			<input type='hidden' name={name} value={item} />
+			<input
+				type='hidden'
+				name={name}
+				value={item}
+			/>
 		</li>
 	))
 
@@ -55,9 +63,20 @@ export const ListField = ({ label, name, placeholder, ordered = false }: ListFie
 					onChange={(event) => setDraft(event.target.value)}
 					onKeyDown={handleKeyDown}
 				/>
-				<button type='button' className='add-list-item' aria-label={`Add ${label.toLowerCase()} item`} onClick={addItem}>+</button>
+				<button
+					type='button'
+					className='add-list-item'
+					aria-label={`Add ${label.toLowerCase()} item`}
+					onClick={addItem}
+				>
+					+
+				</button>
 			</div>
-			{items.length === 0 ? <p className='list-field-hint'>Add at least one item.</p> : ordered ? <ol>{listItems}</ol> : <ul>{listItems}</ul>}
+			{items.length === 0 ?
+				<p className='list-field-hint'>Add at least one item</p>
+			: ordered ?
+				<ol>{listItems}</ol>
+			:	<ul>{listItems}</ul>}
 		</fieldset>
 	)
 }
