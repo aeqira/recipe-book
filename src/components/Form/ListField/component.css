@@ -17,7 +17,9 @@
 	gap: 9px;
 }
 
-.list-field-entry input { flex: 1; }
+.list-field-entry input {
+	flex: 1;
+}
 
 .add-list-item {
 	flex: 0 0 44px;
@@ -31,7 +33,9 @@
 	cursor: pointer;
 }
 
-.add-list-item:hover { background: var(--brand-accent); }
+.add-list-item:hover {
+	background: var(--brand-accent);
+}
 
 .add-list-item:focus-visible,
 .remove-list-item:focus-visible {
@@ -47,9 +51,13 @@
 	padding-left: 28px;
 }
 
-.list-field li { padding-left: 3px; }
+.list-field li {
+	padding-left: 3px;
+}
 
-.list-field li span { vertical-align: middle; }
+.list-field li span {
+	vertical-align: middle;
+}
 
 .remove-list-item {
 	margin-left: 8px;

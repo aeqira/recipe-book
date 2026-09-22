@@ -1,6 +1,8 @@
 /** @format */
 
-.home-heading { margin-bottom: 64px; }
+.home-heading {
+	margin-bottom: 64px;
+}
 
 .daily-feature {
 	padding: 28px;
@@ -18,8 +20,15 @@
 	margin-bottom: 20px;
 }
 
-.daily-feature-heading h2 { margin: 4px 0 0; color: var(--brand-accent); font-size: 1.8rem; }
-.daily-feature-heading > span { color: #77736a; font-weight: 650; }
+.daily-feature-heading h2 {
+	margin: 4px 0 0;
+	color: var(--brand-accent);
+	font-size: 1.8rem;
+}
+.daily-feature-heading > span {
+	color: #77736a;
+	font-weight: 650;
+}
 
 .featured-recipe-card {
 	display: flex;
@@ -33,16 +42,51 @@
 	text-decoration: none;
 }
 
-.featured-recipe-card h3 { margin: 8px 0; color: var(--brand-accent); font-size: clamp(1.7rem, 4vw, 2.6rem); }
-.featured-recipe-card p { margin-bottom: 0; color: #69675f; }
-.featured-recipe-meta { display: flex; flex: 0 0 auto; flex-direction: column; align-items: end; gap: 7px; color: #5c5a53; }
-.featured-recipe-meta strong { margin-top: 7px; color: var(--brand-accent); }
-.daily-feature-empty { padding: 24px; border-radius: 14px; background: #f4f1e9; text-align: center; }
-.daily-feature-empty a { color: var(--brand-accent); font-weight: 700; }
+.featured-recipe-card h3 {
+	margin: 8px 0;
+	color: var(--brand-accent);
+	font-size: clamp(1.7rem, 4vw, 2.6rem);
+}
+.featured-recipe-card p {
+	margin-bottom: 0;
+	color: #69675f;
+}
+.featured-recipe-meta {
+	display: flex;
+	flex: 0 0 auto;
+	flex-direction: column;
+	align-items: end;
+	gap: 7px;
+	color: #5c5a53;
+}
+.featured-recipe-meta strong {
+	margin-top: 7px;
+	color: var(--brand-accent);
+}
+.daily-feature-empty {
+	padding: 24px;
+	border-radius: 14px;
+	background: #f4f1e9;
+	text-align: center;
+}
+.daily-feature-empty a {
+	color: var(--brand-accent);
+	font-weight: 700;
+}
 
 @media (max-width: 650px) {
-	.home-heading { margin-bottom: 42px; }
-	.daily-feature { padding: 20px; }
-	.daily-feature-heading, .featured-recipe-card { align-items: start; flex-direction: column; }
-	.featured-recipe-meta { align-items: start; }
+	.home-heading {
+		margin-bottom: 42px;
+	}
+	.daily-feature {
+		padding: 20px;
+	}
+	.daily-feature-heading,
+	.featured-recipe-card {
+		align-items: start;
+		flex-direction: column;
+	}
+	.featured-recipe-meta {
+		align-items: start;
+	}
 }

@@ -70,8 +70,13 @@ const hashDate = (date: string) => {
 const handleApiRequest = async (request: Request, env: Env, url: URL): Promise<Response> => {
 	if (request.method === 'GET' && url.pathname === '/api/recipes/featured') {
 		const requestedDate = url.searchParams.get('date') ?? new Date().toISOString().slice(0, 10)
-		const date = /^\d{4}-\d{2}-\d{2}$/.test(requestedDate) ? requestedDate : new Date().toISOString().slice(0, 10)
-		const { results } = await env.DB.prepare('SELECT "Id" AS id FROM "Recipes" ORDER BY "Id" ASC').all<{ id: number }>()
+		const date =
+			/^\d{4}-\d{2}-\d{2}$/.test(requestedDate) ? requestedDate : (
+				new Date().toISOString().slice(0, 10)
+			)
+		const { results } = await env.DB.prepare(
+			'SELECT "Id" AS id FROM "Recipes" ORDER BY "Id" ASC'
+		).all<{ id: number }>()
 		if (results.length === 0) return Response.json(null)
 
 		const featuredId = results[hashDate(date) % results.length].id
@@ -80,7 +85,7 @@ const handleApiRequest = async (request: Request, env: Env, url: URL): Promise<R
 
 	if (request.method === 'GET' && url.pathname === '/api/recipes') {
 		const result = await env.DB.prepare(
-			`${recipeSelect} ORDER BY r."Title" COLLATE NOCASE ASC`,
+			`${recipeSelect} ORDER BY r."Title" COLLATE NOCASE ASC`
 		).all<Record<string, unknown>>()
 		return Response.json(result.results)
 	}
@@ -108,7 +113,10 @@ const handleApiRequest = async (request: Request, env: Env, url: URL): Promise<R
 		const difficultyId = Number(input.difficultyId)
 		const spicinessId = Number(input.spicinessId)
 		const time = Number(input.time)
-		const temperature = input.temperature === null || input.temperature === '' ? null : Number(input.temperature)
+		const temperature =
+			input.temperature === null || input.temperature === '' ?
+				null
+			:	Number(input.temperature)
 
 		if (!title || !tools || !ingredients || !directions) {
 			return jsonError('Title, tools, ingredients, and directions are required.', 400)
@@ -124,15 +132,29 @@ const handleApiRequest = async (request: Request, env: Env, url: URL): Promise<R
 			const result = await env.DB.prepare(
 				`INSERT INTO "Recipes"
 				("Title", "Subtitle", "TypeId", "DifficultyId", "SpicinessId", "Time", "Tools", "Ingredients", "Temperature", "Directions")
-				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+				VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
 			)
-				.bind(title, subtitle || null, typeId, difficultyId, spicinessId, time, tools, ingredients, temperature, directions)
+				.bind(
+					title,
+					subtitle || null,
+					typeId,
+					difficultyId,
+					spicinessId,
+					time,
+					tools,
+					ingredients,
+					temperature,
+					directions
+				)
 				.run()
 			const recipe = await readRecipe(Number(result.meta.last_row_id), env.DB)
 			return Response.json(recipe, { status: 201 })
 		} catch (error) {
 			console.error('Unable to save recipe', error)
-			return jsonError('The recipe could not be saved. Check your selections and try again.', 400)
+			return jsonError(
+				'The recipe could not be saved. Check your selections and try again.',
+				400
+			)
 		}
 	}
 

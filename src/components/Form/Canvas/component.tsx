@@ -10,7 +10,13 @@ export const FormCanvas = ({ title, children, formData = {} }: FormCanvasProps) 
 		<FormCanvasContext.Provider value={value}>
 			<div>
 				<h2>{title}</h2>
-				<form id={['form', title].filter(Boolean).join('-').replace(/\s+/g, '-').toLowerCase()}>
+				<form
+					id={['form', title]
+						.filter(Boolean)
+						.join('-')
+						.replace(/\s+/g, '-')
+						.toLowerCase()}
+				>
 					{children}
 				</form>
 			</div>

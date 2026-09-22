@@ -21,7 +21,9 @@
 	font-weight: 650;
 }
 
-.form-grid .wide { grid-column: 1 / -1; }
+.form-grid .wide {
+	grid-column: 1 / -1;
+}
 
 .form-grid input,
 .form-grid select,
@@ -41,7 +43,9 @@
 	height: 44px;
 }
 
-.form-grid textarea { resize: vertical; }
+.form-grid textarea {
+	resize: vertical;
+}
 
 .form-grid input:focus,
 .form-grid select:focus,
@@ -62,11 +66,23 @@
 	cursor: pointer;
 }
 
-.primary-button:disabled { opacity: 0.65; cursor: wait; }
-.form-error { color: #a52d22; font-weight: 600; }
+.primary-button:disabled {
+	opacity: 0.65;
+	cursor: wait;
+}
+.form-error {
+	color: #a52d22;
+	font-weight: 600;
+}
 
 @media (max-width: 600px) {
-	.recipe-form { padding: 20px; }
-	.form-grid { grid-template-columns: 1fr; }
-	.form-grid .wide { grid-column: auto; }
+	.recipe-form {
+		padding: 20px;
+	}
+	.form-grid {
+		grid-template-columns: 1fr;
+	}
+	.form-grid .wide {
+		grid-column: auto;
+	}
 }

@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # Recipe Book
 
 A React and Cloudflare Workers recipe archive backed by D1.

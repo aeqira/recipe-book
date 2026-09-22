@@ -17,7 +17,11 @@ export const getRecipe = async (id: string) => readJson<Recipe>(await fetch(`/ap
 
 export const getDailyFeaturedRecipe = async () => {
 	const today = new Date()
-	const localDate = [today.getFullYear(), String(today.getMonth() + 1).padStart(2, '0'), String(today.getDate()).padStart(2, '0')].join('-')
+	const localDate = [
+		today.getFullYear(),
+		String(today.getMonth() + 1).padStart(2, '0'),
+		String(today.getDate()).padStart(2, '0'),
+	].join('-')
 	return readJson<Recipe | null>(await fetch(`/api/recipes/featured?date=${localDate}`))
 }
 
@@ -27,5 +31,5 @@ export const createRecipe = async (recipe: RecipeInput) =>
 			method: 'POST',
 			headers: { 'content-type': 'application/json' },
 			body: JSON.stringify(recipe),
-		}),
+		})
 	)

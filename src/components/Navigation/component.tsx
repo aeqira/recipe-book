@@ -44,7 +44,12 @@ export const Navigation = ({ routes, title }: NavigationProps) => {
 							key={routePath}
 							className={isActive ? 'active' : ''}
 						>
-							<Link to={routePath} onClick={() => setMenuOpen(false)}>{route.title}</Link>
+							<Link
+								to={routePath}
+								onClick={() => setMenuOpen(false)}
+							>
+								{route.title}
+							</Link>
 						</li>
 					)
 				})}
