@@ -1,5 +1,6 @@
 /** @format */
 
+import type { BaseJson } from '@Types/Base'
 import type { ReactNode } from 'react'
 
 type FieldContent =
@@ -25,7 +26,7 @@ type FieldContent =
 	| 'url'
 	| 'week'
 
-type FormData = Record<string, string | number | boolean | null | unknown>
+type FormData = Record<string, BaseJson>
 
 interface FormSharedProps {
 	title: string

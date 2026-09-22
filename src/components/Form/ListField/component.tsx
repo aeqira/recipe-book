@@ -1,15 +1,10 @@
 /** @format */
 
-import { type KeyboardEvent, useId, useState } from 'react'
+import { useId, useState } from 'react'
+import type { ListFieldProps } from '@Types/Form/ListField'
+import type { KeyboardEvent } from 'react'
 
 import './component.css'
-
-interface ListFieldProps {
-	label: string
-	name: string
-	placeholder: string
-	ordered?: boolean
-}
 
 export const ListField = ({ label, name, placeholder, ordered = false }: ListFieldProps) => {
 	const inputId = useId()

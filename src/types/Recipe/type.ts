@@ -1,31 +1,33 @@
 /** @format */
 
-export interface RecipeSummary {
-	id: number
+import type { NullNumber, NullString } from '@Types/Base'
+
+interface RecipeBase {
 	title: string
-	subtitle: string | null
+	subtitle: NullString
+	time: number
+}
+
+export interface RecipeSummary extends RecipeBase {
+	id: number
 	type: string
 	difficulty: string
 	spiciness: string
-	time: number
 }
 
 export interface Recipe extends RecipeSummary {
 	tools: string
 	ingredients: string
-	temperature: number | null
+	temperature: NullNumber
 	directions: string
 }
 
-export interface RecipeInput {
-	title: string
-	subtitle: string
+export interface RecipeInput extends RecipeBase {
 	typeId: number
 	difficultyId: number
 	spicinessId: number
-	time: number
 	tools: string
 	ingredients: string
-	temperature: number | null
+	temperature: NullNumber
 	directions: string
 }

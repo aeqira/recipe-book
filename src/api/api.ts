@@ -5,7 +5,7 @@ import type { Recipe, RecipeInput, RecipeSummary } from '@Types/Recipe'
 const readJson = async <T>(response: Response): Promise<T> => {
 	if (!response.ok) {
 		const body = (await response.json().catch(() => null)) as { error?: string } | null
-		throw new Error(body?.error ?? 'Something went wrong. Please try again.')
+		throw new Error(body?.error ?? 'Something went wrong, please try again.')
 	}
 
 	return response.json() as Promise<T>
