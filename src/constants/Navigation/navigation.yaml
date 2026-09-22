@@ -1,0 +1,8 @@
+# @format
+
+- title: 'Home'
+  href: '/'
+- title: 'Submit'
+  href: '/submit'
+- title: 'Recipe Book'
+  href: '/recipe'

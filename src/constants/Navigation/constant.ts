@@ -1,7 +1,8 @@
 /** @format */
 
-export const NavigationMenu = [
-	{ title: 'Home', href: '/' },
-	{ title: 'Submit', href: '/submit' },
-	{ title: 'Recipe Book', href: '/recipe' },
-]
+import { parse } from 'yaml'
+import type { NavigationRoute } from '@Types/Navigation'
+
+import navigatonYaml from './navigation.yaml?raw'
+
+export const NavigationMenu = parse(navigatonYaml) as NavigationRoute[]

@@ -1,6 +1,6 @@
 /** @format */
 
-interface NavigationRoute {
+export interface NavigationRoute {
 	title: string
 	href: string
 }

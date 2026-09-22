@@ -13,7 +13,8 @@
   "dependencies": {
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "react-router-dom": "^7.18.2"
+    "react-router-dom": "^7.18.2",
+    "yaml": "^2.9.1"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "^1.53.0",
@@ -25,5 +26,10 @@
     "typescript": "~6.0.2",
     "vite": "^8.2.0",
     "wrangler": "^4.124.0"
+  },
+  "allowScripts": {
+    "esbuild@0.28.1": true,
+    "fsevents@2.3.3": true,
+    "workerd@1.20260921.1": true
   }
 }
